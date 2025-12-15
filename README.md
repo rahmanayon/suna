@@ -168,8 +168,39 @@ That's it! Your Kortix platform will be running with Kortix Super Worker ready t
 
 ## 🏠 Self-Hosting
 
-Just use "setup.py". Ty mate.
+### Local Development Setup
 
+For local development and testing, use our automated setup wizard:
+
+```bash
+python setup.py
+python start.py
+```
+
+The setup wizard guides you through 14 steps to configure your local Kortix instance.
+
+### Production Deployment
+
+For production deployments to cloud platforms (AWS, DigitalOcean, VPS, etc.), see our comprehensive [Deployment Guide](DEPLOYMENT.md).
+
+**Quick Deploy with Docker Compose:**
+
+```bash
+# Configure environment
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+# Edit .env files with your configuration
+
+# Deploy
+docker compose up -d
+```
+
+📖 **Read the full [Deployment Guide](DEPLOYMENT.md)** for:
+- Cloud deployment options (AWS, DigitalOcean, VPS)
+- Production best practices
+- Security and scalability guidelines
+- Monitoring and maintenance
+- Troubleshooting
 
 ---
 
