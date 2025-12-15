@@ -234,3 +234,8 @@ apps/mobile/app-example
 
 # Infra (separate repository)
 infra/
+
+# Deployment backups
+backups/
+*.tar.gz
+*.tar.gz.enc

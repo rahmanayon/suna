@@ -49,7 +49,7 @@ Create your own specialized agents tailored to specific domains, workflows, or b
 - [🎯 Agent Examples & Use Cases](#-agent-examples--use-cases)
 - [🏗️ Platform Architecture](#️-platform-architecture)
 - [🚀 Quick Start](#-quick-start)
-- [🏠 Self-Hosting](#-self-hosting)
+- [🏠 Self-Hosting & Deployment](#-self-hosting--deployment)
 - [🤝 Contributing](#-contributing)
 - [📄 License](LICENSE)
 
@@ -166,10 +166,56 @@ python start.py
 
 That's it! Your Kortix platform will be running with Kortix Super Worker ready to assist you.
 
-## 🏠 Self-Hosting
+## 🏠 Self-Hosting & Deployment
 
-Just use "setup.py". Ty mate.
+### Local Development Setup
 
+For local development and testing, use our automated setup wizard:
+
+```bash
+python setup.py
+python start.py
+```
+
+The setup wizard guides you through 14 steps to configure your local Kortix instance.
+
+### Production Deployment
+
+Deploy Kortix to production in minutes with our comprehensive deployment resources:
+
+**🚀 Quick Deploy (5 minutes):**
+```bash
+git clone https://github.com/kortix-ai/suna.git
+cd suna
+./deploy.sh  # Interactive deployment manager
+```
+
+**📖 Deployment Documentation:**
+- **[Quick Deploy Guide](QUICK_DEPLOY.md)** - Get deployed in under 10 minutes
+- **[Full Deployment Guide](DEPLOYMENT.md)** - Comprehensive 18KB guide covering:
+  - Docker Compose deployment
+  - AWS (ECS, EC2), DigitalOcean, VPS deployments
+  - Production best practices
+  - Security and scalability guidelines
+  - Monitoring and troubleshooting
+- **[Deployment Checklist](DEPLOYMENT_CHECKLIST.md)** - Verify your deployment
+- **[Deployment Overview](docs/DEPLOYMENT_OVERVIEW.md)** - Choose the right deployment path
+
+**Manual Docker Compose Deployment:**
+```bash
+# Configure environment
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+# Edit .env files with your configuration
+
+# Deploy
+docker compose up -d
+```
+
+Access your instance at:
+- Frontend: http://localhost:3000
+- API: http://localhost:8000
+- API Docs: http://localhost:8000/docs
 
 ---
 

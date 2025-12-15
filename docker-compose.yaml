@@ -1,27 +1,36 @@
 # ============================================================================
-# KORTIX SUPER WORKER DOCKER COMPOSE - LOCAL DEVELOPMENT
+# KORTIX DOCKER COMPOSE - PRODUCTION & DEVELOPMENT
 # ============================================================================
-# This Docker Compose file runs Kortix Super Worker services (Backend, Worker, Frontend, Redis)
+# This Docker Compose file runs all Kortix services:
+#   - Backend API (FastAPI)
+#   - Background Workers (Dramatiq)
+#   - Frontend (Next.js)
+#   - Redis (Message broker & cache)
 #
-# ⚠️  IMPORTANT LIMITATION - LOCAL SUPABASE:
-# Currently, local Supabase (via `npx supabase start`) is NOT supported with
-# Docker Compose due to network configuration complexity.
+# 📋 Prerequisites:
+#   1. Configure backend/.env with your settings (copy from .env.example)
+#   2. Configure frontend/.env with your settings (copy from .env.example)
+#   3. Have a Supabase instance (cloud or self-hosted)
+#   4. Required API keys: LLM provider, Tavily, Firecrawl
 #
-# TODO: Integrate Supabase services directly into this compose file to enable
-#       full Docker-based local development with proper network configuration.
-#
-# CURRENT WORKAROUND:
-# - Use cloud Supabase for Docker Compose setup
-# - OR run everything manually (no Docker) to use local Supabase
-#
-# Quick Start:
+# 🚀 Quick Start:
 #   docker compose up -d          # Start all services
 #   docker compose down           # Stop all services
 #   docker compose logs -f        # View all logs
+#   docker compose ps             # Check status
+#   docker compose restart        # Restart services
 #
-# Access:
-#   - Kortix Super Worker Frontend:     http://localhost:3000
-#   - Kortix Super Worker Backend API:  http://localhost:8000
+# 📊 Scaling Workers:
+#   docker compose up -d --scale worker=3
+#
+# 🔗 Access:
+#   - Frontend:     http://localhost:3000
+#   - Backend API:  http://localhost:8000
+#   - API Docs:     http://localhost:8000/docs
+#
+# 📖 Documentation:
+#   - Full deployment guide: See DEPLOYMENT.md
+#   - Quick deploy guide: See QUICK_DEPLOY.md
 # ============================================================================
 
 services:
